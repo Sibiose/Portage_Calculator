@@ -5,6 +5,7 @@ const resultsContainer = document.getElementById("results-container");
 const birthDateInput = document.getElementById("birth-date");
 const evaluationDateInput = document.getElementById("evaluation-date");
 const calculateBtn = document.getElementById("calculate-btn");
+
 createForm(calculatorContainer);
 
 createResultsTab(resultsContainer);

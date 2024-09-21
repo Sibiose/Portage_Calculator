@@ -104,4 +104,17 @@ export const createResultsTab = (parentContainer) =>{
         resultDomainContainer.appendChild(vm);
         
     })
+    let interpretationString = "Interpretare QD: ";
+    const resultsInterpretation = document.getElementById("result-interpretation");
+    qdValues.forEach((value, i)=>{
+        if(i == 0){
+            interpretationString += "< " + value.max + " : " + value.title + " " + ", ";
+        } else if (i === qdValues.length-1){
+            interpretationString += "> " + value.min + " : " + value.title + " ";
+        } else{
+            interpretationString += value.min  + " - " + value.max + " : " + value.title + ", ";
+        }
+        
+    })
+    resultsInterpretation.innerText = interpretationString;
 }

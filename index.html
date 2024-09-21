@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section class="titleSection">
+    <section id="titleSection">
         <h1>Portage Calculator</h1>
     </section>
     <section id="calculator-section">
-        <h2 id=>Calculator section</h2>
         <div id="date-section">
-            <label>Data nașterii: </label>
-            <input id="birth-date" type="date">
-            <br></br>
-            <label>Data Evaluării: </label>
-            <input id="evaluation-date" type="date">
+            <div>
+                <label>Data nașterii: </label>
+                <input id="birth-date" type="date">
+            </div>
+            <div>
+                <label>Data Evaluării: </label>
+                <input id="evaluation-date" type="date">
+            </div>
         </div>
         <div id="calculator-container"></div>
     </section>
@@ -27,6 +29,33 @@
         <h4 id="total-qd"id=>QD TOTAL = </h2>
         <h4 id="total-vm"id=>Vârsta mentală = </h2>
         <div id="results-container"></div>
+        <p id="result-interpretation">Interpretare QD: &lt 30: Retard profund,
+            31 - 39: Retard sever,
+            {min: 40,max: 54, title:"Retard moderat"},
+            {min: 55,max: 69, title:"Retard ușor"},
+            {min: 70,max: 79, title:"Zona de graniță"},
+            {min: 80,max: 89, title:"Mediu inferior"},
+            {min: 90,max: 109, title:"Mediu"},
+            {min: 110,max: 119, title:"Mediu superior"},
+            {min: 120,max: 129, title:"Foarte bine"},
+            {min: 130,max: 200, title:"Excepțional"}</p>
+    </section>
+    <section id="disclaimer-section">
+        <h2>Disclaimer</h2>
+        <p style="color:crimson">Aplicația reprezintă un instrument care vine în ajutorul persoanei care administrează testul, facilitând calculele care stau în spatele 
+            interpretării rezultatului testului. Rezultatele oferite de portage calculator s-ar putea să nu fie 100% valide, deci nu trebuie folosite ca în scop
+        final profesional. Rezultatele trebuie mereu comparate, verificate de o persoană având capacitatea de a scora și mai apoi interpreta rezultatul.</p>
+        <br/>
+        <p style="font-weight: bold">Portage calculator se bazează pe următoarea formulă de calcul. 
+            <br>
+            Scor nivel(SN) = întrebări completate * 100 / întrebări totale 
+            <br> VM (domeniu) = (SN1 + SN2 + SN3 + SN4 + SN5+ SN6) /100 
+            <br>  QD (domeniu) = VM/VC * 100 
+            <br> VM (total) = Suma aritmetică a VM a celor 
+            5 domenii 
+            <br> QD (total) = VM(total) / VC * 100</p>
+        <p style="margin-top: 30px">* La momentul de față formulele nu țin cont de continuitatea răspunsurilor, sau de procentul de răspunsuri complete pentru un anumit nivel de vârstă.
+             În funcție de acestea numărul de răspunsuri completate trebuie ajustat de către utilizator</p>
     </section>
     <script src="script.js" type="module"></script>
 </body>
