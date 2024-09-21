@@ -62,7 +62,6 @@ export const createForm = (parentContainer) =>{
 
         let inputElement = document.createElement("input");
         inputElement.type = "number";
-        inputElement.value = 0;
         inputElement.id = "level-"+ domain.title + level.value;
         inputElement.classList.add("input-element")
         inputElement.addEventListener("input", (e)=>{
